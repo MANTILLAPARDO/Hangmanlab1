@@ -34,7 +34,7 @@ import main.java.view.*;
 
 public class SwingProject {
     public static final String PROJECT_NAME = "CS 245 - Swing Project v1";
-    public static final String DICTIONARY = "src/main/resources/dictionary.txt";
+    public static final String DICTIONARY = "src/main/resources/";
     public static final String CONTRIBUTORS[] = {
         "Omar Rodriguez, 008796203", 
         "Nahid Enayatzadeh, 010164622",
@@ -91,7 +91,7 @@ public class SwingProject {
         
         gameController = new GameController(
                 new GamePanel(),
-                new GameModel(DICTIONARY),
+                new GameModel(DICTIONARY+FactoryRegion.generateFactory('E').getDictionary()),
                 mainFrameController
         );
         

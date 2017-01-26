@@ -32,11 +32,11 @@ public class GamePanel extends JPanel{
     private HangmanPanel hmPanel;
     JPanel blanksHolder;
     private ArrayList<LetterBlankPanel> blanksArrayList;
-    private KeyboardEUR key;
+    private Keyboard key;
     
         
     public GamePanel() {
-        key =new KeyboardEUR();
+        key =FactoryRegion.generateFactory('L').getKeyboard();
         blanksHolder = new JPanel();
         blanksArrayList = new ArrayList<>();
         gameNameLabel = new JLabel("Placeholder");
