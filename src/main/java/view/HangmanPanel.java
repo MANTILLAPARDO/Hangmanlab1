@@ -45,34 +45,9 @@ public class HangmanPanel extends JPanel{
         int panelWidth = this.getWidth();
         int panelHeight = this.getHeight();
         
-        g.drawLine(10, panelHeight - 10, (panelWidth / 4) + 10, panelHeight - 10);
-        g.drawLine(((panelWidth/4)/2) + 10, panelHeight - 10,((panelWidth/4)/2) + 10, 10);
-        g.drawLine(((panelWidth/4)/2) + 10, 10, (panelWidth / 4) + 10, 10);
-        g.drawLine((panelWidth / 4) + 10, 10, (panelWidth / 4) + 10, panelHeight / 6);
         
-        
-        if(incorrectCount > 0){
-            g.drawOval((panelWidth/4)+ 10 - (panelHeight / 12),(panelHeight/6),panelHeight/6,panelHeight/6); // Head
-        }
-        if(incorrectCount > 1){
-            g.drawLine((panelWidth / 4) + 10,(panelHeight/6)*2,(panelWidth / 4) + 10,(panelHeight/6)*3); // Torso
-        }
-        if(incorrectCount > 2){
-            g.drawLine((panelWidth / 4) + 10,((panelHeight/6)*2) + (panelHeight/18),((panelWidth / 4) + 10) - (panelHeight/6),
-                    (((panelHeight/6)*2) + (panelHeight/18))-(panelHeight/12)); // Left Arm
-        }
-        if(incorrectCount > 3){
-            g.drawLine((panelWidth / 4) + 10,((panelHeight/6)*2) + (panelHeight/18),((panelWidth / 4) + 10) + (panelHeight/6),
-                    (((panelHeight/6)*2) + (panelHeight/18))-(panelHeight/12)); // Right Arm
-        }
-        if(incorrectCount > 4){
-            g.drawLine((panelWidth / 4) + 10,(panelHeight/6)*3,((panelWidth / 4) + 10) - (panelHeight/6),
-                    (((panelHeight/6)*3) + (panelHeight/18))+(panelHeight/12)); // Left Leg
-        }
-        if(incorrectCount > 5){
-            g.drawLine((panelWidth / 4) + 10,(panelHeight/6)*3,((panelWidth / 4) + 10) + (panelHeight/6),
-                    (((panelHeight/6)*3) + (panelHeight/18))+(panelHeight/12)); // Left Leg        
-        }
-        
+        HangmanEUR hang=new HangmanEUR();
+        hang.paint(incorrectCount,g,panelWidth,panelHeight);
+       
     }
 }

@@ -31,14 +31,14 @@ public class GamePanel extends JPanel{
     private JPanel keyboard;
     private HangmanPanel hmPanel;
     JPanel blanksHolder;
-    private JButton[] keyboardButtonArray;
     private ArrayList<LetterBlankPanel> blanksArrayList;
+    private KeyboardEUR key;
     
         
     public GamePanel() {
+        key =new KeyboardEUR();
         blanksHolder = new JPanel();
         blanksArrayList = new ArrayList<>();
-        keyboardButtonArray = new JButton[26];
         gameNameLabel = new JLabel("Placeholder");
         gameNameLabel.setForeground(new Color(30,144,255));
         gameNameLabel.setFont(new Font("Impact", Font.PLAIN,24));
@@ -83,12 +83,7 @@ public class GamePanel extends JPanel{
         blanksHolder.setLayout(new GridLayout(1,8));
         bottomContainer.add(blanksHolder);
         
-        JPanel keyboard = new JPanel();
-        keyboard.setLayout(new GridLayout(3,1));
-        for(int i=65; i<91; i++){
-            keyboardButtonArray[i-65] = new JButton(Character.toString((char) i));
-            keyboard.add(keyboardButtonArray[i-65]);
-        }
+        JPanel keyboard=key.makeKeyboard();
         bottomContainer.add(keyboard);
         
         this.add(bottomContainer, BorderLayout.PAGE_END);
@@ -109,7 +104,7 @@ public class GamePanel extends JPanel{
     //method: getKeyboardButtonArray
     //purpose: return reference to array of key buttons
     public JButton[] getKeyboardButtonArray() {
-        return keyboardButtonArray;
+        return key.getKeyboardButtonArray();
     }
 
     //method: getPoints
