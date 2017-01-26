@@ -11,10 +11,12 @@ package main.java.view;
  */
 public abstract class FactoryRegion {
     protected static FactoryRegion inst=null;
-    public static FactoryRegion generateFactory(char caracter){
+    public static void generateFactory(char caracter){
         if(caracter=='U')FactoryUSA.generate();
         else if(caracter=='L')FactoryLAT.generate();
         else if(caracter=='E')FactoryEUR.generate();
+    }
+    public static FactoryRegion getFactory(){
         return inst;
     }
     public abstract Hangman getHangman();

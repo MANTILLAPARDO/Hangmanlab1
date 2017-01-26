@@ -36,7 +36,7 @@ public class GamePanel extends JPanel{
     
         
     public GamePanel() {
-        key =FactoryRegion.generateFactory('L').getKeyboard();
+        key =FactoryRegion.getFactory().getKeyboard();
         blanksHolder = new JPanel();
         blanksArrayList = new ArrayList<>();
         gameNameLabel = new JLabel("Placeholder");

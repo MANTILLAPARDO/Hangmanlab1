@@ -46,7 +46,7 @@ public class HangmanPanel extends JPanel{
         int panelHeight = this.getHeight();
         
         
-        Hangman hang=FactoryRegion.generateFactory('L').getHangman();
+        Hangman hang=FactoryRegion.getFactory().getHangman();
         hang.paint(incorrectCount,g,panelWidth,panelHeight);
        
     }

@@ -91,7 +91,7 @@ public class SwingProject {
         
         gameController = new GameController(
                 new GamePanel(),
-                new GameModel(DICTIONARY+FactoryRegion.generateFactory('E').getDictionary()),
+                new GameModel(DICTIONARY+FactoryRegion.getFactory().getDictionary()),
                 mainFrameController
         );
         
@@ -137,6 +137,7 @@ public class SwingProject {
     //method: main
     //purpose: the entry-point to our application
     public static void main(String[] args) {
+        FactoryRegion.generateFactory('L');
         SwingProject game = new SwingProject();
         game.setupAndStart();
     }
